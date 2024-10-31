@@ -142,7 +142,19 @@ void get_diagonal_sum(const Matrix& matrix) {      //calculates the diagonal sum
         sum += matrix.matrix_data[i][j];    //adds the value to the sum
         j++;      //increases j by one
     }
-    cout << "Diagonal sum is: " << sum <<endl;   //print the diagonal sum
+    
+    int k = matrix.matrix_size-1;
+    double second_sum;
+    
+    for (int i = 0; i < matrix.matrix_size; i++){    //loops through every row
+        second_sum += matrix.matrix_data[i][k];    //adds the value to the sum
+        k--;      //decreases k by one
+    }
+    
+    
+    
+    cout << "Main diagonal sum is: " << sum <<endl;   //print the diagonal sum
+    cout << "Secondary diagonal sum is: " << second_sum <<endl;   //print the second diagonal sum
     
     // TODO: Calculate and print the sum of the diagonal elements
 }
